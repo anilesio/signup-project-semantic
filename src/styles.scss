@@ -1,0 +1,15 @@
+@import '~ngx-toastr/toastr';
+
+body{
+    background-color: rgb(233, 253, 236);
+}
+
+.svg {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: -99999999;
+    margin-bottom: -10px;
+ }

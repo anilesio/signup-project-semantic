@@ -1,28 +1,28 @@
 <div class="ui container espaco-p-2">
     <form class="ui form espaco-p-2 novo-fundo-1" [formGroup]="this.formValue">
         <div class="espaco-m-top-0 espaco-m-baixo-1">
-            <h1 class="ui header">Login</h1>
+            <h1 class="texto-4 titulo-5 ui header">Login</h1>
             <div class="borda-titulo-0 espaco-m-baixo-0 espaco-m-top-0"></div>
 
         </div>
         <div class="field">
           <label>Username</label>
           <div >
-            <input type="text" name="first-name" formControlName="username" placeholder="username">
+            <input type="text" name="first-name" formControlName="username" required placeholder="username">
             <span *ngIf="this.formValue.controls['username'].dirty && this.formValue.hasError('required', 'username') ">*Username é obrigatório</span>  
           </div>
          
         </div>
         <div class="field">
           <label>Palavra-passe</label>
-          <input type="password" name="last-name" formControlName="password" placeholder="palavra-passe">
+          <input type="password" name="last-name" formControlName="password" required placeholder="palavra-passe">
         </div>
 
         <div class="field">
             <p>Ainda não possui uma conta? <a routerLink="/signup" class="negrito">Crie uma aqui</a></p>
         </div>
       
-        <button class="ui button" (click)="this.login()" type="submit">Entrar</button>
+        <button class="ui button" [disabled]="this.formValue.invalid" (click)="this.login()" type="submit">Entrar</button>
       </form>
   </div>
 
